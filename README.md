@@ -4,7 +4,7 @@
 - [x] Inorder Iterative Traversal : Stack
 - [x] Postorder Iterative Traversal : Stack
 
-## Union-Find
+## Union-Find :rocket:
 [Study Guide](https://www.cs.princeton.edu/courses/archive/fall19/cos226/lectures/study/15UnionFind.html)
 [Book Link](https://algs4.cs.princeton.edu/15uf/)
 - [ ] WeightedQuickUnionPathCompression
