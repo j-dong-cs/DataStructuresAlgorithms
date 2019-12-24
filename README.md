@@ -7,7 +7,7 @@
 ## Union-Find :rocket:
 [Study Guide](https://www.cs.princeton.edu/courses/archive/fall19/cos226/lectures/study/15UnionFind.html)
 [Book Link](https://algs4.cs.princeton.edu/15uf/)
-- [ ] WeightedQuickUnionPathCompression : Array
+- [x] WeightedQuickUnionPathCompression : Array
 - [ ] Minimal Spanning Tree
 - [ ] Percolation
 - [ ] Hex
