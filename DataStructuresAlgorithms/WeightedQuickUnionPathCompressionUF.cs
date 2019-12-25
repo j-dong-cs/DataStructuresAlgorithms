@@ -3,9 +3,9 @@ namespace DataStructuresAlgorithms
 {
     public class WeightedQuickUnionPathCompressionUF
     {
-        // for test purpose: make them as public
-        public int[] parent; // array of int: keep tracking the root node of each node
-        public int[] size; // array of int: count the number of elements in the tree rooted at i
+        private int[] parent; // array of int: keep tracking the root node of each node
+        private int[] size; // array of int: count the number of elements in the tree rooted at i
+        private int numComponents; // keep track of the number of components in the union find
 
         // This constructor takes in an int of n which represents the number of
         // nodes and then initializes the properties of parent and size array
@@ -14,6 +14,7 @@ namespace DataStructuresAlgorithms
         {
             parent = new int[n];
             size = new int[n];
+            numComponents = n;
 
             for (int i = 0; i < n; i++)
             {
@@ -24,6 +25,11 @@ namespace DataStructuresAlgorithms
             }
         }
 
+        // creat getters for private fields
+        public int[] Parent { get => parent; }
+        public int[] Size { get => size; }
+        public int NumComponents { get => numComponents; }
+
         // Given node p, find and return the root of node p
         public int Find(int p)
         {
@@ -31,7 +37,7 @@ namespace DataStructuresAlgorithms
             while (p != parent[p]) // when i == parant[i] means i is a root
             {
                 // make every other node in path point to its grandparent
-                parent[p] = parent[parent[p]]; 
+                parent[p] = parent[parent[p]];
                 p = parent[p];
             }
 
@@ -55,6 +61,10 @@ namespace DataStructuresAlgorithms
 
             parent[r1] = r2; // make r1 point to root r2
             size[r2] += size[r1]; // update size
+
+            // every union occurs means that the number of components/set has
+            // decreased by 1
+            numComponents--;
         }
     }
 }
