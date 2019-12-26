@@ -13,7 +13,7 @@
 - [ ] Hex
 - [ ] Hoshen–Kopelman algorithm
 
-## Graph: Undirect and Direct
+## Graph: Undirect and Direct :world_map:	
 - [ ] Graph Representation : Vertex and Edge
 - [ ] Depth First Search : Stack/Recursion
 - [ ] Breath First Search : Queue
