@@ -1,13 +1,13 @@
 # DataStructuresAlgorithms
 ## Binary Tree  :evergreen_tree: 
-- [x] Preorder Iterative Traversal : Stack
-- [x] Inorder Iterative Traversal : Stack
-- [x] Postorder Iterative Traversal : Stack
+- [x] [Preorder Iterative Traversal : Stack](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
+- [x] [Inorder Iterative Traversal : Stack](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
+- [x] [Postorder Iterative Traversal : Stack](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
 
 ## Union-Find :rocket:
 [Study Guide](https://www.cs.princeton.edu/courses/archive/fall19/cos226/lectures/study/15UnionFind.html)
 [Book Link](https://algs4.cs.princeton.edu/15uf/)
-- [x] [WeightedQuickUnionPathCompression : Array](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
+- [x] [WeightedQuickUnionPathCompression : Array](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/WeightedQuickUnionPathCompressionUF.cs)
 - [ ] Minimal Spanning Tree
 - [ ] Percolation
 - [ ] Hex
