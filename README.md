@@ -12,3 +12,17 @@
 - [ ] Percolation
 - [ ] Hex
 - [ ] Hoshen–Kopelman algorithm
+
+## Graph: Undirect and Direct
+- [ ] Graph Representation : Vertex and Edge
+- [ ] Depth First Search : Stack/Recursion
+- [ ] Breath First Search : Queue
+- [ ] Dijkstra's Algorithm : Queue
+- [ ] Topological Sort : Directed Acyclic Graph
+  - a directed acyclic graph
+  - Reverse DFS postorder
+  - has a topological order iff no directed cycle
+- [ ] Directed cycle detection 
+  - cyclic inheritance : compiler does directed cycle detection
+  - precedence scheduling : A directed cycle implies scheduling problem is infeasible
+  - spreadsheet recalculation
