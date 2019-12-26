@@ -7,7 +7,7 @@
 ## Union-Find :rocket:
 [Study Guide](https://www.cs.princeton.edu/courses/archive/fall19/cos226/lectures/study/15UnionFind.html)
 [Book Link](https://algs4.cs.princeton.edu/15uf/)
-- [x] [WeightedQuickUnionPathCompression : Array] (https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
+- [x] [WeightedQuickUnionPathCompression : Array](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
 - [ ] Minimal Spanning Tree
 - [ ] Percolation
 - [ ] Hex
