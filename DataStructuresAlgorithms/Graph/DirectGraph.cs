@@ -5,106 +5,125 @@ namespace DataStructuresAlgorithms.Graph
     // This class represents a direct graph data structure which has
     // V vertex and edges connected between two vertex.
     // User is able to add/remove vertex and edges.
-    public class DirectGraph
+    public class DirectGraph<V, E> where V : notnull where E : notnull
     {
-        private int V; // number of vertex in the graph
-        private Dictionary<int, LinkedList<int>> adj; // adjacency list
+        private int Count { get; set; } // number of vertex in the graph
+        private Dictionary<Vertex<V>, LinkedList<Edge<V,E>>> adj; // adjacency list
+        private Dictionary<V, Vertex<V>> vertexLookup;
 
         // Default contructor: creates an empty graph with 0 vertex
         // and empty adjacency list;
         public DirectGraph()
         {
-            this.V = 0;
-            adj = new Dictionary<int, LinkedList<int>>();
+            this.Count = 0;
+            adj = new Dictionary<Vertex<V>, LinkedList<Edge<V, E>>>();
+            vertexLookup = new Dictionary<V, Vertex<V>>();
         }
 
-        // This constructor initializes number of vertex with value passed in
-        // and adjacency list with V vertex.
-        public DirectGraph(int V)
+        public void Clear()
         {
-            this.V = V;
-            adj = new Dictionary<int, LinkedList<int>>();
-            for (int i = 0; i < V; i++)
-            {
-                adj.Add(i, new LinkedList<int>());
-            }
+
+        }
+
+        public void ClearEdges()
+        {
+
+        }
+
+        public void ClearVertexInfo()
+        {
+
         }
 
         // This method adds an vertex into graph.
-        public void AddVertex()
+        public void AddVertex(V v)
         {
-            V++;
-            adj.Add(V, new LinkedList<int>());
+            Count++;
         }
 
         // This method removes an vertex from graph if exists
         // and removes all edges connect from and to this vertex.
-        public void RemoveVertex(int v)
+        public void RemoveVertex(V v)
         {
-            if (ValidateVertex(v))
-            {
-                adj.Remove(v); // remove all edges starting from v
 
-                for (int i = 0; i < V; i++)
-                {
-                    if (adj.ContainsKey(i) && adj[i].Contains(v))
-                    {
-                        adj[i].Remove(v);
-                    }
-                }
-            }
         }
 
         // This method creates an edge from vertex v to w if v and w are valid.
-        public void AddEdge(int v, int w)
+        public void AddEdge(V v1, V v2)
         {
-            if (ValidateVertex(v) && ValidateVertex(w))
-            {
-                adj[v].AddFirst(w);
-            }
+
+        }
+
+        public void AddEdge(V v1, V v2, E e)
+        {
+
+        }
+
+        public void AddEdge(V v1, V v2, int weight)
+        {
+
+        }
+
+        public void AddEdge(V v1, V v2, E e, int weight)
+        {
+
         }
 
         // This method removes an edge from vertex v to w if v and w are valid
         // and there is an edge from vertex v to w.
-        public void RemoveEdge(int v, int w)
+        public void RemoveEdge(V v1, V v2)
         {
-            if (ValidateEdge(v, w))
-            {
-                adj[v].Remove(w);
-            }
+
         }
 
-        // This method returns all edges connected from vertex v if valid;
-        // otherwise, return null;
-        public IEnumerable<int> Adj(int v)
+        public void RemoveEdge(E e)
         {
-            if (v < 0 || v > this.V)
-            {
-                return null;
-            }
 
-            return adj[v];
         }
 
-        // This helper method returns true if both two vertex are valid;
-        // and returns false if either is not;
-        private bool ValidateVertex(int v)
+        public bool ContainsEdge(E e)
         {
-            if (v < 0 || v > this.V) return false;
-
             return true;
         }
 
-        // This helper method returns true if exists an edge from
-        // vertex v to w; returns false if not.
-        private bool ValidateEdge(int v, int w)
+        public bool ContainsEdge(V v1, V v2)
         {
-            if (ValidateVertex(v) && ValidateVertex(w))
-            {
-                return adj[v].Contains(w);
-            }
+            return true;
+        }
 
-            return false;
+        public bool ContainsVertex(V v)
+        {
+            return true;
+        }
+
+        public E Edge(V v1, V v2)
+        {
+            return default(E);
+        }
+
+        public ICollection<E> Edges()
+        {
+            return null;
+        }
+
+        public int EdgeWeight(V v1, V v2)
+        {
+            return 0;
+        }
+
+        public ISet<V> Neighbors(V v)
+        {
+            return null;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public ISet<V> Vertices()
+        {
+            return null;
         }
     }
 }

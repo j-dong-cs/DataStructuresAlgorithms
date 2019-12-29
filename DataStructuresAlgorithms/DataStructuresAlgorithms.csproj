@@ -7,4 +7,7 @@
   <ItemGroup>
     <Folder Include="Graph\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="GlobalSuppressions.cs" />
+  </ItemGroup>
 </Project>

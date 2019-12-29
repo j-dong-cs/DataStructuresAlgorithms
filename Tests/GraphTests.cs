@@ -9,7 +9,7 @@ namespace Tests
         [Fact]
         public void GraphTest()
         {
-            DirectGraph graph = new DirectGraph(10);
+            DirectGraph<string, object> graph = new DirectGraph<string, object>();
 
 
         }
