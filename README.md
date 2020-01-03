@@ -3,6 +3,8 @@
 - [x] [Preorder Iterative Traversal : Stack](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
 - [x] [Inorder Iterative Traversal : Stack](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
 - [x] [Postorder Iterative Traversal : Stack](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
+- [x] Level Order Iterative Traversal : Queue
+- [x] Level Order Recursive Traversal
 
 ## Union-Find :rocket:
 [Study Guide](https://www.cs.princeton.edu/courses/archive/fall19/cos226/lectures/study/15UnionFind.html)
@@ -12,6 +14,10 @@
 - [ ] Percolation
 - [ ] Hex
 - [ ] Hoshen–Kopelman algorithm
+
+## Sorting Algorithms
+- [x] MergeSort
+- [x] QuickSort : Median3 optimization
 
 ## Graph: Undirect and Direct :world_map:	
 - [ ] Graph Representation : Vertex and Edge
