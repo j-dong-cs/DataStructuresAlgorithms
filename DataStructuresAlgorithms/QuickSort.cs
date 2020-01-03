@@ -5,10 +5,18 @@ namespace DataStructuresAlgorithms
     /*
      * QuickSort implemention with shuffling and median-of-3 optimization.
      *
+     * Average : O (n * logn)
+     * Worst : O (n2) -> rarely with proper shuffling
+     * 
      * Not stable, in-place sort
      */
     public static class QuickSort<T> where T : IComparable<T>
     {
+        public static void ThreeWaySort(T[] array)
+        {
+
+        }
+
         public static void Median3Sort(T[] array)
         {
             if (array == null || array.Length == 0) return;
