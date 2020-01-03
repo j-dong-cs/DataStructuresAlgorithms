@@ -6,6 +6,8 @@ namespace DataStructuresAlgorithms
      * Generic MergeSort class which provides two implementation:
      * Topdown and Bottomup.
      * 
+     * Stable: preserves the relative order of equal keys.
+     * 
      * O(n * logn)
      */
     public static class MergeSort<T> where T : IComparable<T>
