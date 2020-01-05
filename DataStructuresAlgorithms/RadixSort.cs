@@ -5,10 +5,14 @@ namespace DataStructuresAlgorithms
     /*
      * RadixSort implemtation including
      * Least-significant-digit-first (LSD) radix sort
-     * Guarantee: O (2wn), space: n+R
+     * Guarantee: O (2wn)
+     * Random: O (2wn)
+     * Space: n+R
      * 
      * Most-significant-digit-first (MSD) radix sort
-     * Guarantee: O ()
+     * Guarantee: O (2wn)
+     * Random: O (nlogrn)
+     * Space: n + DR
      */
     public static class RadixSort
     {
@@ -59,7 +63,8 @@ namespace DataStructuresAlgorithms
 
             // partition array into R pieces according to first character
             int[] count = new int[R + 2];
-            for (int i = lo; i < hi; i++)
+
+            for (int i = lo; i <= hi; i++)
             {
                 count[CharAt(a[i], d) + 2]++;
             }
@@ -67,14 +72,21 @@ namespace DataStructuresAlgorithms
             {
                 count[r + 1] += count[r];
             }
-            for (int i = lo; i < hi; i++)
+            for (int i = lo; i <= hi; i++)
             {
-                aux[count[CharAt(a[i], d)+1]++] = a[i];
+                aux[count[CharAt(a[i], d) + 1]++] = a[i];
             }
-            for (int i = lo; i < hi; i++)
+            for (int i = lo; i <= hi; i++)
             {
                 a[i] = aux[i - lo];
             }
+
+            Console.WriteLine();
+            foreach (string s in a)
+            {
+                Console.Write($"{s} ");
+            }
+            Console.WriteLine();
 
             for (int r = 0; r < R; r++)
             {
