@@ -17,6 +17,11 @@ namespace DataStructuresAlgorithms
 
         }
 
+        public static T QuickSelect(T[] array)
+        {
+            return default(T);
+        }
+
         public static void Median3Sort(T[] array)
         {
             if (array == null || array.Length == 0) return;
