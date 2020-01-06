@@ -15,18 +15,20 @@
 - [ ] Hex
 - [ ] Hoshen–Kopelman algorithm
 
-## Sorting Algorithms :zero::one::two::three::four::five:
+## Sorting Algorithms :zero::one::two::three::four::five::six:
 - [x] SelectionSort
 - [x] InsertionSort
 - [x] MergeSort
 - [x] QuickSort : Median3 optimization
   - [ ] DualPivot
-  - [x] 3-way string
+  - [ ] 3-way
+  - [x] 3-way Radix
 - [x] RadixSort
   - [x] LSD 
   - [x] MSD
   - [ ] InplaceMSD
   - [ ] American Flag
+- [ ] SuffixSort
 
 ## Graph: Undirect and Direct :world_map:	
 - [ ] Graph Representation : Vertex and Edge
