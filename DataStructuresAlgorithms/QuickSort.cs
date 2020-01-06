@@ -12,6 +12,61 @@ namespace DataStructuresAlgorithms
      */
     public static class QuickSort<T> where T : IComparable<T>
     {
+        public static void ThreeWayRadixSort(string[] array)
+        {
+            if (array == null || array.Length <= 1) return;
+            RadixSortHelper(array, 0, array.Length - 1, 0);
+        }
+
+        private static void RadixSortHelper(string[] array, int lo, int hi, int d)
+        {
+            if (hi <= lo) return;
+            int pivot = CharAt(array[lo], d);
+
+            // 3-way partition on dth character
+            int i = lo + 1, lt = lo, gt = hi;
+            while (i <= gt)
+            {
+                int cur = CharAt(array[i], d);
+                if (cur < pivot)
+                {
+                    Swap(array, lt++, i++);
+                }
+                else if (cur > pivot)
+                {
+                    Swap(array, i, gt--);
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            // recursively conduct 3-way partition on sub-arrays
+            RadixSortHelper(array, lo, lt - 1, d);
+            if (pivot != -1) RadixSortHelper(array, lt, gt, d + 1);
+            RadixSortHelper(array, gt + 1, hi, d);
+        }
+
+        private static void Swap(string[] array, int i, int j)
+        {
+            string temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+
+        private static int CharAt(string s, int d)
+        {
+            if (d < s.Length)
+            {
+                return s[d];
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
         public static void ThreeWaySort(T[] array)
         {
 

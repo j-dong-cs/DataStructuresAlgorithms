@@ -8,7 +8,7 @@ namespace Tests
     public class QuickSortTests
     {
         public static readonly int[] expectInt = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-        public static readonly string[] expectStr = { "alice", "ben", "cate", "john", "juan", "luis", "shirley", "zoe" };
+        public static readonly string[] expectName = { "abbey", "alex", "alice", "ben", "benny", "bobby", "cate", "john", "johnny", "luis", "shawn", "shirley", "zoe" };
 
         [Fact]
         public void Median3SortIntTest()
@@ -25,12 +25,22 @@ namespace Tests
         [Fact]
         public void Median3SortStrTest()
         {
-            string[] array = {"zoe", "alice", "juan", "john", "ben", "shirley", "cate", "luis"};
-
+            string[] array = { "zoe", "alex", "luis", "ben", "johnny", "benny", "abbey", "shawn", "alice", "shirley", "john", "bobby", "cate" };
             QuickSort<string>.Median3Sort(array);
             for (int i = 0; i < array.Length; i++)
             {
-                Assert.Equal(expectStr[i], array[i]);
+                Assert.Equal(expectName[i], array[i]);
+            }
+        }
+
+        [Fact]
+        public void ThreeWayRadixSortTest()
+        {
+            string[] array = { "zoe", "alex", "luis", "ben", "johnny", "benny", "abbey", "shawn", "alice", "shirley", "john", "bobby", "cate" };
+            QuickSort<string>.ThreeWayRadixSort(array);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Assert.Equal(expectName[i], array[i]);
             }
         }
     }
