@@ -21,7 +21,7 @@
 - [x] MergeSort
 - [x] QuickSort : Median3 optimization
   - [ ] DualPivot
-  - [ ] 3-way string
+  - [x] 3-way string
 - [x] RadixSort
   - [x] LSD 
   - [x] MSD
