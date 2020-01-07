@@ -72,15 +72,18 @@ namespace DataStructuresAlgorithms
 
         }
 
-        public static T QuickSelect(T[] array)
+        // Given an array of n items, find item of rank k
+        public static T QuickSelect(T[] array, int k)
         {
+            
+
             return default(T);
         }
 
         public static void Median3Sort(T[] array)
         {
             if (array == null || array.Length == 0) return;
-
+            Shuffle(array);
             Median3Sort(array, 0, array.Length - 1);
         }
 
@@ -130,6 +133,17 @@ namespace DataStructuresAlgorithms
             return (array[lo].CompareTo(array[mid]) < 0 ?
                 (array[mid].CompareTo(array[hi]) < 0 ? mid : array[lo].CompareTo(array[hi]) < 0 ? hi : lo) :
                 (array[hi].CompareTo(array[mid]) < 0 ? mid : array[hi].CompareTo(array[lo]) < 0 ? hi : lo));
+        }
+
+        // Fisher-yates shuffle 
+        private static void Shuffle(T[] array)
+        {
+            Random rand = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Swap(array, i, rand.Next(i + 1));
+            }
         }
     }
 }

@@ -51,6 +51,11 @@ namespace DataStructuresAlgorithms
             }
         }
 
+        public static void InplaceMSD(string[] a)
+        {
+
+        }
+
         public static void MSD(string[] a)
         {
             string[] aux = new string[a.Length];
@@ -81,12 +86,14 @@ namespace DataStructuresAlgorithms
                 a[i] = aux[i - lo];
             }
 
+            /*
             Console.WriteLine();
             foreach (string s in a)
             {
                 Console.Write($"{s} ");
             }
             Console.WriteLine();
+            */
 
             for (int r = 0; r < R; r++)
             {
