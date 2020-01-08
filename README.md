@@ -21,7 +21,7 @@
 - [x] MergeSort
 - [x] QuickSort : Median3 optimization
   - [ ] DualPivot
-  - [ ] 3-way
+  - [x] 3-way
   - [x] 3-way Radix
 - [x] RadixSort
   - [x] LSD 
@@ -29,6 +29,9 @@
   - [ ] InplaceMSD
   - [ ] American Flag
 - [ ] SuffixSort
+
+## Selecting Algorithm
+- [x] Quick Select
 
 ## Graph: Undirect and Direct :world_map:	
 - [ ] Graph Representation : Vertex and Edge
