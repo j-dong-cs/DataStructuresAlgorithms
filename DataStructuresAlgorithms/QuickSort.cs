@@ -67,10 +67,42 @@ namespace DataStructuresAlgorithms
             }
         }
 
+        // Performs efficiently in array with duplicate items.
+        // Best:    O (n)
+        // Average: O (2nlnn)
+        // Worst:   O (1/2 n2)
         public static void ThreeWaySort(T[] array)
         {
             if (array == null || array.Length == 0) return;
             Shuffle(array);
+            ThreeWaySortHelper(array, 0, array.Length - 1);
+        }
+        // lo       lt      gt      hi
+        // |   <V   |   =V  |   >v  |
+        private static void ThreeWaySortHelper(T[] array, int lo, int hi)
+        {
+            if (hi <= lo) return;
+            T pivot = array[lo];
+
+            int i = lo + 1, lt = lo, gt = hi;
+            while (i <= gt)
+            {
+                if (pivot.CompareTo(array[i]) < 0)
+                {
+                    Swap(array, i, gt--);
+                }
+                else if (pivot.CompareTo(array[i]) > 0)
+                {
+                    Swap(array, lt++, i++);
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            ThreeWaySortHelper(array, lo, lt - 1);
+            ThreeWaySortHelper(array, gt + 1, hi);
         }
 
         // Given an array of n items, find item of rank k in aescending order.

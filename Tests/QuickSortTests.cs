@@ -9,6 +9,18 @@ namespace Tests
     {
         public static readonly int[] expectInt = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         public static readonly string[] expectName = { "abbey", "alex", "alice", "ben", "benny", "bobby", "cate", "john", "johnny", "luis", "shawn", "shirley", "zoe" };
+        public static readonly char[] expectDup = { 'a', 'a', 'a', 'b', 'b', 'c', 'c', 'c', 'c', 'e', 'e', 'x', 'x', 'y', 'z' };
+
+        [Fact]
+        public void ThreeWaySort()
+        {
+            char[] array = { 'c', 'e', 'c', 'a', 'b', 'x', 'a', 'c', 'z', 'a', 'b', 'c', 'e', 'x', 'y' };
+            QuickSort<char>.ThreeWaySort(array);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Assert.Equal(expectDup[i], array[i]);
+            }
+        }
 
         [Fact]
         public void QuickSelectAscendingTest()
