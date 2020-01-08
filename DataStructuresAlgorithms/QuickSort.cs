@@ -69,15 +69,63 @@ namespace DataStructuresAlgorithms
 
         public static void ThreeWaySort(T[] array)
         {
-
+            if (array == null || array.Length == 0) return;
+            Shuffle(array);
         }
 
-        // Given an array of n items, find item of rank k
-        public static T QuickSelect(T[] array, int k)
+        // Given an array of n items, find item of rank k in aescending order.
+        // QuickSelect takes linear time on average
+        public static T QuickSelectAscending(T[] array, int k)
         {
-            
+            Shuffle(array);
+            int lo = 0, hi = array.Length - 1;
 
-            return default(T);
+            while (hi > lo)
+            {
+                int pivot = Partition(array, lo, hi);
+                if (pivot < k)
+                {
+                    lo = pivot + 1;
+                }
+                else if (pivot > k)
+                {
+                    hi = pivot - 1;
+                }
+                else // pivot = k
+                {
+                    return array[k];
+                }
+            }
+
+            return array[k];
+        }
+
+        // Find the top k item in descending order from array.
+        public static T QuickSelectDescending(T[] array, int k)
+        {
+            Shuffle(array);
+            int n = array.Length;
+            k = n - 1 - k;
+            int lo = 0, hi = n - 1;
+
+            while (hi > lo)
+            {
+                int pivot = Partition(array, lo, hi);
+                if (pivot < k)
+                {
+                    lo = pivot + 1;
+                }
+                else if (pivot > k)
+                {
+                    hi = pivot - 1;
+                }
+                else // pivot = k
+                {
+                    return array[k];
+                }
+            }
+
+            return array[k];
         }
 
         public static void Median3Sort(T[] array)

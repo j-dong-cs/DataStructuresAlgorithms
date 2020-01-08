@@ -11,6 +11,28 @@ namespace Tests
         public static readonly string[] expectName = { "abbey", "alex", "alice", "ben", "benny", "bobby", "cate", "john", "johnny", "luis", "shawn", "shirley", "zoe" };
 
         [Fact]
+        public void QuickSelectAscendingTest()
+        {
+            int[] array = { 10, 0, 3, 11, 8, 9, 1, 12, 5, 2, 4, 6, 7 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                int val = QuickSort<int>.QuickSelectAscending(array, i);
+                Assert.Equal(expectInt[i], val);
+            }
+        }
+
+        [Fact]
+        public void QuickSelectDescendingTest()
+        {
+            int[] array = { 10, 0, 3, 11, 8, 9, 1, 12, 5, 2, 4, 6, 7 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                int val = QuickSort<int>.QuickSelectDescending(array, i);
+                Assert.Equal(expectInt[expectInt.Length - 1 - i], val);
+            }
+        }
+
+        [Fact]
         public void Median3SortIntTest()
         {
             int[] array = { 10, 0, 3, 11, 8, 9, 1, 12, 5, 2, 4, 6, 7 };
