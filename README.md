@@ -18,6 +18,7 @@
 ## Sorting Algorithms :zero::one::two::three::four::five::six:
 - [x] SelectionSort
 - [x] InsertionSort
+- [ ] HeapSort
 - [x] MergeSort
 - [x] QuickSort : Median3 optimization
   - [ ] DualPivot
