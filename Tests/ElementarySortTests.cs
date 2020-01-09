@@ -11,6 +11,28 @@ namespace Tests
         public static readonly string[] expectStr = { "alice", "ben", "cate", "john", "juan", "luis", "shirley", "zoe" };
 
         [Fact]
+        public void BinaryInsertionSortIntTest()
+        {
+            int[] array = { 10, 0, 3, 11, 8, 9, 1, 12, 5, 2, 4, 6, 7 };
+            InsertionSort<int>.BinaryInsertion(array);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Assert.Equal(expectInt[i], array[i]);
+            }
+        }
+
+        [Fact]
+        public void BinaryInsertionSortStrTest()
+        {
+            string[] array = { "zoe", "alice", "juan", "john", "ben", "shirley", "cate", "luis" };
+            InsertionSort<string>.BinaryInsertion(array);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Assert.Equal(expectStr[i], array[i]);
+            }
+        }
+
+        [Fact]
         public void SelectionSortIntTest()
         {
             int[] array = { 10, 0, 3, 11, 8, 9, 1, 12, 5, 2, 4, 6, 7 };
