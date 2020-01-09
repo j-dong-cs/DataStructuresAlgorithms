@@ -18,6 +18,7 @@
 ## Sorting Algorithms :zero::one::two::three::four::five::six:
 - [x] SelectionSort
 - [x] InsertionSort
+  - [x] BinaryInsertion with half exchanges
 - [ ] HeapSort
 - [x] MergeSort
 - [x] QuickSort : Median3 optimization
