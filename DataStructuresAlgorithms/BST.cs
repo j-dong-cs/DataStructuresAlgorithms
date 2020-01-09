@@ -113,14 +113,14 @@ namespace DataStructuresAlgorithms
         public Key Min()
         {
             if (Size() == 0) throw new InvalidOperationException();
-            return Min(root);
+            return Min(root).Key;
         }
 
-        private Key Min(Node cur)
+        private Node Min(Node cur)
         {
             if (cur.Left == null)
             {
-                return cur.Key;
+                return cur;
 
             } else
             {
@@ -132,14 +132,14 @@ namespace DataStructuresAlgorithms
         public Key Max()
         {
             if (Size() == 0) throw new InvalidOperationException();
-            return Max(root);
+            return Max(root).Key;
         }
 
-        private Key Max(Node cur)
+        private Node Max(Node cur)
         {
             if (cur.Right == null)
             {
-                return cur.Key;
+                return cur;
             } else
             {
                 return Max(cur.Right);
@@ -230,24 +230,45 @@ namespace DataStructuresAlgorithms
         public void Delete(Key key)
         {
             if (key == null) throw new ArgumentNullException();
+            root = Delete(root, key);
+        }
 
-            Node cur = root;
-            while (cur != null)
+        private Node Delete(Node cur, Key key)
+        {
+            if (cur == null) return null;
+
+            int cmp = key.CompareTo(cur.Key);
+            if (cmp < 0)
             {
-                int cmp = key.CompareTo(cur.Key);
-                if (cmp < 0)
-                {
-                    cur = cur.Left;
-                }
-                else if (cmp > 0)
-                {
-                    cur = cur.Right;
-                }
-                else // cur.Key = key
-                {
-
-                }
+                cur.Left = Delete(cur.Left, key);
             }
+            else if (cmp > 0)
+            {
+                cur.Right = Delete(cur.Right, key);
+            }
+            else // cur.Key = key
+            {
+                if (cur.Left == null) return cur.Right;
+                if (cur.Right == null) return cur.Left;
+                Node temp = cur;
+                cur = Min(temp.Right); // replace with min from right subtree
+                cur.Right = DeleteMin(temp.Right); // handle right children in delete min 
+                cur.Left = temp.Left; // min has no left child
+            }
+            cur.Count = Size(cur.Left) + Size(cur.Right) + 1;
+
+            return cur;
+        }
+
+        // This helper method locate the min node in the tree and delete the node from tree
+        // while adding its childer to its parent maintaining BST properties.
+        private Node DeleteMin(Node cur)
+        {
+            if (cur.Left == null) return cur.Right;
+            cur.Left = DeleteMin(cur.Left);
+            cur.Right = DeleteMin(cur.Right);
+            cur.Count = Size(cur.Left) + Size(cur.Right) + 1;
+            return cur;
         }
 
         // private Node class 
