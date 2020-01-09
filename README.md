@@ -5,6 +5,7 @@
 - [x] [Postorder Iterative Traversal : Stack](https://github.com/j-dong-cs/DataStructuresAlgorithms/blob/master/DataStructuresAlgorithms/BinaryTreeIterativeTraversal.cs)
 - [x] Level Order Iterative Traversal : Queue
 - [x] Level Order Recursive Traversal
+- [x] Construct BST from level order traversal
 
 ## Union-Find :rocket:
 [Study Guide](https://www.cs.princeton.edu/courses/archive/fall19/cos226/lectures/study/15UnionFind.html)
