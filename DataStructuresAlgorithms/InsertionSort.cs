@@ -12,6 +12,37 @@ namespace DataStructuresAlgorithms
      */
     public static class InsertionSort<T> where T : IComparable<T>
     {
+        // Sort an array using an optimized binary insertion sort with half exchanges
+        public static void BinaryInsertion(T[] array)
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                int lo = 0, hi = i;
+                T cur = array[i];
+
+                while (lo < hi)
+                {
+                    // binary search to determine index j at which to insert a[i]
+                    int mid = lo + (hi - lo) / 2;
+                    if (cur.CompareTo(array[mid]) < 0)
+                    {
+                        hi = mid;
+                    }
+                    else if (cur.CompareTo(array[mid]) > 0)
+                    {
+                        lo = mid + 1;
+                    }
+                }
+
+                // insert a[i] at index j and shift a[j] .. a[i-1] to the right
+                for  (int j = i; j > lo; j--)
+                {
+                    array[j] = array[j - 1];
+                }
+                array[lo] = cur;
+            }
+        }
+
         public static void Sort(T[] array)
         {
             int size = array.Length;
